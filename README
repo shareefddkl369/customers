@@ -1,1 +1,10 @@
 hi customers welcome to bangalore
+def create
+@contacts_channels = []
+params[:contact_id].each_with_index do |contact, i|
+@contacts_channels[i] = ContactChannel.new
+@contacts_channels[i].contact_id = contact_id
+@contacts_channels[i].channel_id = params[:channel_id][i]
+@contacts_channels[i].save
+end
+end
